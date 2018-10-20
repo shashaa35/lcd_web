@@ -2,13 +2,15 @@
 Practice Cookbook for linuxacademy local chef development badge
 
 # Chef Workstation setup:
+```
 `curl -s https://omnitruck.chef.io/install.sh | sudo bash -s -- -P chefdk`
 
 `echo 'eval "$(chef shell-init bash)"' >> ~/.bash_profile`
 
 `source ~/.bash_profile`
-
+```
 # Install docker
+```
 sudo yum install -y git yum-utils
 
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
@@ -32,3 +34,4 @@ logout
 docker network create --subnet=10.1.1.0/24 testnet
 
 gem install kitchen-docker
+```
