@@ -9,22 +9,6 @@ package 'net-tools' do
 	action :install
 end
 
-package platform_package_httpd
-
-service platform_service_httpd do
-  action [:enable, :start]
+hello_httpd 'custom resource' do
+  greeting "Hello Shashank"
 end
-
-template '/var/www/html/index.html' do
-  cookbook 'lcd_web'
-  source 'index.html.erb'
-  owner 'apache'
-  group 'apache'
-  variables(
-    greeting_scope: node['greeting_scope'],
-    greeting: node['greeting'],
-    fqdn: node['fqdn']
-  )
-end
-
-restart_httpd
