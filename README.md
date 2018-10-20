@@ -35,3 +35,10 @@ docker network create --subnet=10.1.1.0/24 testnet
 
 gem install kitchen-docker
 ```
+
+# Generate with a Generator
+```
+mkdir generator
+mkdir -p chef/cookbooks
+chef generate generator generator/lcd_origin  
+```
