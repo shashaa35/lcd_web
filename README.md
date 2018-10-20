@@ -75,3 +75,6 @@ suites:
        - test/smoke/default
    attributes:
 ```
+
+* Genrating a cookbook using generator
+`chef generate cookbook lcd_web -g ../../generator/lcd_origin`
