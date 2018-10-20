@@ -15,10 +15,14 @@ action :create do
     group 'apache'
     variables(
       greeting_scope: node['greeting_scope'],
-      greeting: greeting,
+      greeting: new_resource.greeting,
       fqdn: node['fqdn']
     )
   end
 
   restart_httpd
+end
+
+action_class do
+  include LcdWebCookbook::Helpers
 end
