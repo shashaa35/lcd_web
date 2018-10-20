@@ -9,12 +9,10 @@ package 'net-tools' do
 	action :install
 end
 
-package 'httpd' do 
-	action :install
-end
+package platform_package_httpd
 
-service 'httpd' do
-	action [:enable, :start]
+service platform_service_httpd do
+  action [:enable, :start]
 end
 
 template '/var/www/html/index.html' do
@@ -28,3 +26,5 @@ template '/var/www/html/index.html' do
     fqdn: node['fqdn']
   )
 end
+
+restart_httpd
